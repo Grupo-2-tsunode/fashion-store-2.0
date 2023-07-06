@@ -7,7 +7,7 @@ gap: 25px;
 margin-top: 33px;
 
 
-div {
+button {
   width: 60px;
   height: 60px;
   background-color: var(--color-black);

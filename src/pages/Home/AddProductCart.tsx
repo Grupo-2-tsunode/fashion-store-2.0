@@ -6,13 +6,13 @@ import { GlobalContext } from "../../providers/GlobalContext/GlobalContext";
 import { Link } from "react-router-dom";
 
 const AddProductCart = ({product} : {product : IProduct}) => {
-  const { renderProduct } = useContext(GlobalContext)
+  const { renderProduct,addProductToCart } = useContext(GlobalContext)
 
   return (
     <StyledAddProductCart>
-        <div>
+        <button onClick={() => {addProductToCart(product.id)}}>
         <FaCartPlus size={36} color="white" />
-       </div>
+       </button>
       <Link to={`/product/${product.id}`} onClick={()=>renderProduct(product.id)}>Saiba Mais</Link>
       </StyledAddProductCart>
   );

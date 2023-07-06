@@ -2,27 +2,61 @@ import { AiFillEdit, AiOutlineClose } from 'react-icons/ai'
 import { ButtonStyled } from '../../styles/ButtonStyled'
 import { TitleStyled } from '../../styles/typography'
 import { EditProductStyled } from './styled'
+import { InputComponent } from '../Input'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { useContext } from 'react'
+import { AdmContext } from '../../providers/AdmContext/AdmContext'
+import { INewProduct } from '../../providers/AdmContext/@types'
+import { IProduct } from '../../providers/GlobalContext/@types'
 
-export const EditProduct = () => {
+interface IEditProductProps {
+    product: IProduct | null
+
+}
+
+export const EditProduct = ({product} : IEditProductProps) => {
+
+    if(product){
+
+    const {editProduct, setIsEditModalOpen} = useContext(AdmContext)
+
+    const {register,handleSubmit} = useForm<INewProduct>()
+
+    const submit:SubmitHandler<INewProduct> = (formData) => {
+        const priceNumber:number = Number(formData.price)
+        const newFormData:INewProduct = {
+            name: formData.name,
+            price: priceNumber,
+            image: formData.image,
+            description: formData.description,
+        }
+        editProduct(newFormData, product.id)
+        console.log(newFormData)
+    }
+
+    const handleClose = () => {
+        setIsEditModalOpen(false)
+    }
+
     return(
         <EditProductStyled>
-            <div className='modal__container'>
+            <form onSubmit={handleSubmit(submit)} className='modal__container'>
                 <div className="header__modal">
                     <TitleStyled fontSize='bg' fontWidt='500'>EDITAR PRODUTO</TitleStyled>
-                    <span>
+                    <span onClick={handleClose}>
                         <AiOutlineClose />
                     </span>
                 </div>
-                <input type="text" name="" id="" />
-                <input type="number" name="" id="" />
-                <input type="text" name="" id="" />
-                <textarea name="" id=""></textarea>
+                <InputComponent placeholder={product.name} type='text' {...register('name')}/>
+                <InputComponent placeholder={`R$${product.price}`} type='number' {...register('price')}/>
+                <InputComponent placeholder={product.image} type='text' {...register('image')}/>
+                <InputComponent placeholder={product.description} type='text' {...register('description')}/>
                 <div className='buttonAdd'>
                     <ButtonStyled buttonStyle='black'>
                        <AiFillEdit/> EDITAR PRODUTO
                     </ButtonStyled>
                 </div>
-            </div>
+            </form>
         </EditProductStyled>
-    )
+    )}
 }

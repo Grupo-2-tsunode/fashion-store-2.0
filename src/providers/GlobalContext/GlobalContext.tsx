@@ -11,7 +11,7 @@ export const GlobalContext = createContext({} as IGlobalContext)
 export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
 
     const [ProductsList, setProductsList] = useState<IProduct[]>([])
-    const [CurrentProduct, setCurretProduct] = useState<IProduct | null>(null) 
+    const [CurrentProduct, setCurrentProduct] = useState<IProduct | null>(null) 
     const [SuggestedProducts, setSuggestedProducts] = useState<IProduct[]>([])
     const [CartList, setCartList]= useState<ICartProduct[]>([]) 
     const [CartValue, setCartValue] = useState(0) 
@@ -23,7 +23,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
     const renderProduct = async (idProduct:number)=>{
         try {
             const {data} = await api.get<IProduct>(`/products/${idProduct}`)
-            setCurretProduct(data)
+            setCurrentProduct(data)
             setSuggestedProducts(ProductsList.filter(element => element.id !== idProduct))
         } catch (error) {
             toast.error(`${error}`)
@@ -157,6 +157,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         SuggestedProducts, 
         CartList, 
         setProductsList,
+        setCurrentProduct,
         renderProduct, 
         addProductToCart, 
         removeProductFromCart, 

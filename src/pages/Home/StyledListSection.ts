@@ -47,7 +47,6 @@ const StyledListSection = styled.section`
   @media(max-width: 768px){
     overflow-x: scroll;
     ul{
-      flex-direction: row;
       flex-wrap: nowrap;
       justify-content: center;
       width: max-content;

@@ -7,8 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useContext } from "react";
 import { GlobalContext } from "../../providers/GlobalContext/GlobalContext";
 import logo from '../../assets/logo.png'
+import {  useNavigate } from "react-router-dom";
 function LoginPage() {
-
+    const navigate = useNavigate()
     const { register, handleSubmit, formState:{errors} } = useForm<TLoginData>({
         resolver: zodResolver(loginSchema)
     })
@@ -20,7 +21,7 @@ function LoginPage() {
     }
 
     return ( <>
-      {/* <HeaderAdmin> <img src={logo} alt="" />  </HeaderAdmin> */}
+      <HeaderAdmin> <img src={logo} alt="logo marca da empresa" onClick={()=>{navigate('/')}}   />  </HeaderAdmin>
         <StyledMain>
             <StyledContainer>
                <div className="boxOne">
@@ -36,7 +37,7 @@ function LoginPage() {
                         {errors.password?.message}
                         <div>
                             <button className="buttonAcess" type="submit" > ACESSAR </button>
-                            <button className="buttonRegister" > CADASTRE-SE </button>
+                            <button className="buttonRegister" type="button" onClick={()=>{navigate('/register')}} > CADASTRE-SE </button>
                         </div>
 
 

@@ -34,7 +34,8 @@ export interface ICurrentUser{
 export interface IGlobalContext{
     ProductsList: IProduct[];
     setProductsList: React.Dispatch<React.SetStateAction<IProduct[]>>;
-    CurrentProduct: IProduct | null;
+    setCurrentProduct: React.Dispatch<React.SetStateAction<IProduct | null>>;
+    CurrentProduct: IProduct;
     SuggestedProducts: IProduct[];
     CartList: ICartProduct[];
     renderProduct: (idProduct: number) => Promise<void>;

@@ -4,15 +4,16 @@ import LoginPage from "../pages/Login";
 import { DashboardPage } from "../pages/AdmDashboard";
 import { AdmProvider } from "../providers/AdmContext/AdmContext";
 import RegisterPage from "../pages/Register";
+import ProductPage from "../pages/Home/ProductDetails/ProductPage";
 
 
 function RoutesMain() {
     return ( 
         <Routes>
             <Route path='/' element={<HomePage/>} />
+            <Route path='/product/:id' element={<ProductPage/>} />
             <Route path='/login' element={<LoginPage/>}  />
             <Route path='/register' element={<RegisterPage/>} />
-            
             <Route path='/adm/dashboard' element={<AdmProvider><DashboardPage/></AdmProvider>}/>
         </Routes>
      );

@@ -34,6 +34,7 @@ export const AddProduct = () => {
         }
         console.log(newFormData)
         addNewProduct(newFormData)
+        setIsNewProductModalOpen(false)
     }
 
     return(

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const AddProductCart = ({product} : {product : IProduct}) => {
   const { renderProduct, addProductToCart } = useContext(GlobalContext)
 
+
   return (
     <StyledAddProductCart>
         <button onClick={()=>{addProductToCart(product.id)}}>

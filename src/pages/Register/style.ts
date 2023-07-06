@@ -1,41 +1,37 @@
 import styled from "styled-components"
 
-export const HeaderTemporario = styled.header`
-    width: 100vw;
-    height: 10vh;
-`
-
 export const StyledMain = styled.main`
-   
-    height: 75vh;
-    padding-right: 10vw;
-    padding-left: 10vw;
-
+    height: 70vh;
+    display: flex;
+    width: 100%;
+    margin-top: 3vh;
 `
 
 export const StyledContainer = styled.div`
-    width: 80vw;
+    width: 100%;
     display: flex;
-    height: 100%;
+    height: 60vh ;
+    justify-content: flex-start;
+    gap: 30px;
     
     .boxOne{
-        width: 60%;
+        display: flex;
+        width: 55%;
+        justify-content: flex-end;
         height: 100%;
     
         img{
-            width: 100%;
-            height: 100%;
+            
+            height: 120%;
         }
     }
     .boxTwo{
-        padding-top: 1%;
         display: flex;
-        height: 100%;
-        padding-right:  1%; 
-        padding-left: 1%;
+        height: 100%;   
         width: 40%;
-        
+        justify-content: flex-start;
         form{
+                height: 100%;
                 display: flex ;
                 flex-direction: column;
                 gap: 15px;
@@ -62,7 +58,7 @@ export const StyledContainer = styled.div`
             div{
                 display: flex;
                 flex-direction: row;
-                gap: 15px;
+                
                 align-items: center;
                 
                 .buttonRegister{
@@ -95,13 +91,13 @@ export const FooterAdmin = styled.footer`
     display: flex;
     position: fixed;
     bottom: 0;
-    height: 10vh;
+    height: 15vh;
     width: 100%;
     justify-content: center;
     align-items: center;
     background-color: var(--color-black);
     color: var(--color-white);
     font-family: 'Roboto';
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 500;  
 `

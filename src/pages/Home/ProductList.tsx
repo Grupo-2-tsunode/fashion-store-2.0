@@ -3,7 +3,7 @@ import AddProductCart from "./AddProductCart";
 import { GlobalContext } from "../../providers/GlobalContext/GlobalContext";
 
 const ListProducts = () => {
-  const { ProductsList } = useContext(GlobalContext);
+  const { ProductsList} = useContext(GlobalContext);
 
   return (
     <>

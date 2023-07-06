@@ -48,7 +48,7 @@ function RegisterPage() {
                         <InputComponent type="password" placeholder="CONFIRMAR SENHA" {...register('confirmPassword')}  />
                         {errors.confirmPassword?.message}
                         <div>
-                            <button type="submit" className="buttonCadaster" > CADASTRAR-SE </button>
+                            <button type="submit" className="buttonRegister" > CADASTRAR-SE </button>
                         </div>
                     </form>
                 </div>

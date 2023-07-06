@@ -29,7 +29,7 @@ function ListProduct() {
                     </div>
                 </BoxOne>
                 <BoxTwo>
-                    <ul>
+                    
                         {ProductsList.map(element => {
                             return <li key={element.id}>
                                 <CardProduct>
@@ -38,7 +38,7 @@ function ListProduct() {
                                     </div>
                                     <div className="BoxCardTwo">
                                         <p> {element.name} </p>
-                                        <span> R$ {(element.price).toFixed(2)} </span>
+                                        {/* <span> R$ {(element.price).toFixed(2)} </span> */}
                                     </div>
                                     <div className="BoxCardTree">
                                         <button> <img src={iconEdit} alt="" /> </button>
@@ -47,7 +47,7 @@ function ListProduct() {
                                 </CardProduct>
                             </li>
                         })}
-                    </ul>
+                    
                 </BoxTwo>
             </ContainerList>
         </section>

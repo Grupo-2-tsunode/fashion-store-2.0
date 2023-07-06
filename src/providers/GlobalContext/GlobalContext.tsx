@@ -33,15 +33,15 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
     const addProductToCart = async (idProduct:number)=>{
         try {
             const {data} = await api.get<IProduct>(`/products/${idProduct}`)
-
             const isProductInCart = () =>{
                 const productInCart= CartList.filter(element=> element.id === idProduct)
-        
-                if(!productInCart){
+                
+                if(productInCart.length==0){
                     const newProduct = {...data, quantity: 1}
                     setCartList([...CartList, newProduct])
+                    console.log(newProduct)
                 }
-                if(productInCart){
+                if(productInCart.length > 0){
                     updateProductInCart(idProduct)
                 }
 

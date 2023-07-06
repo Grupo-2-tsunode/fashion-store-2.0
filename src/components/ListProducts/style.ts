@@ -57,25 +57,21 @@ export const BoxOne = styled.div`
     }
     }
 `
-export const BoxTwo = styled.div`
+export const BoxTwo = styled.ul`
     display: flex;
     height: 40vh;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
     
-    ul{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: 100%;
-        gap: 20px;
-        padding-left: 30px;
-    }
 `
 
-export const CardProduct =  styled.li`
+export const CardProduct = styled.li`
     display: flex;
-    height: 200px;
-    width: 650px;
+    appearance: none;
+    height: 150px;
+    max-width: 650px;
+    width: 100%;
     .BoxCardOne{
         height: 100%;
         width: 150px;

@@ -63,13 +63,13 @@ export const StyledContainer = styled.div`
                     font-weight: 400;
                     font-family: 'Roboto';
                 }
-                .buttonCadaster{
+                .buttonRegister{
                     height: 40px;  
                     letter-spacing: 2px;
                     background-color: var(--color-white);
                     color: var(--color-black);
                     padding: 10px;
-                    font-family: Roboto;
+                    font-family: 'Roboto';
                     font-size: 12px;
                     font-weight: 500;
                     border: solid 1px var(--color-black);

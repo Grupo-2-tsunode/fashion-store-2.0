@@ -67,12 +67,12 @@ export const StyledContainer = styled.div`
                 
                 .buttonRegister{
                     height: 40px; 
-                    margin-left: 68%; 
+                    margin-left: 67%; 
                     letter-spacing: 2px;
                     background-color: var(--color-black);
                     color: var(--color-white);
                     padding: 10px;
-                    font-family: Roboto;
+                    font-family: 'Roboto';
                     font-size: 12px;
                     font-weight: 500;
                    

@@ -16,5 +16,6 @@ export const StyledInput = styled.input`
 
     ::placeholder{
         padding-left: 20px;
+        font-size: 21px;
     }
 `

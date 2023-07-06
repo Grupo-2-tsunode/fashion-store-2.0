@@ -29,7 +29,7 @@ function ListProduct() {
                     </div>
                 </BoxOne>
                 <BoxTwo>
-                    <ul>
+                    
                         {ProductsList.map(element => {
                             return <li key={element.id}>
                                 <CardProduct>
@@ -47,7 +47,7 @@ function ListProduct() {
                                 </CardProduct>
                             </li>
                         })}
-                    </ul>
+                    
                 </BoxTwo>
             </ContainerList>
         </section>

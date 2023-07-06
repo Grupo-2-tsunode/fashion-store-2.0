@@ -6,7 +6,7 @@ import { TLoginData, loginSchema } from "./LoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useContext } from "react";
 import { GlobalContext } from "../../providers/GlobalContext/GlobalContext";
-
+import logo from '../../assets/logo.png'
 function LoginPage() {
 
     const { register, handleSubmit, formState:{errors} } = useForm<TLoginData>({

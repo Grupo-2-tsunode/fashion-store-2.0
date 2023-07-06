@@ -33,18 +33,17 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
     const addProductToCart = async (idProduct:number)=>{
         try {
             const {data} = await api.get<IProduct>(`/products/${idProduct}`)
-
             const isProductInCart = () =>{
                 const productInCart= CartList.filter(element=> element.id === idProduct)
-        
-                if(!productInCart){
+                
+                if(productInCart.length==0){
                     const newProduct = {...data, quantity: 1}
                     setCartList([...CartList, newProduct])
                 }
-                if(productInCart){
+                if(productInCart.length > 0){
                     updateProductInCart(idProduct)
                 }
-
+                console.log(CartValue+data.price)
                 setCartValue(CartValue+data.price)
             } 
             
@@ -87,8 +86,11 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         setCartList(newCart)
     }
 
-    const removeProductFromCart = (idProduct:number)=>{
-        setCartList(CartList.filter(element=> element.id !== idProduct))
+    const removeProductFromCart = (product : ICartProduct)=>{
+        setCartList(CartList.filter(element=> element.id !== product.id))
+        let sub = product.quantity * product.price
+        setCartValue(CartValue-sub)
+
     }
 
     const loginAdm =async (formData:TLoginData) => {

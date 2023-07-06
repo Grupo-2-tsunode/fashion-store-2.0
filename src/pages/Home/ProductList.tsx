@@ -4,7 +4,7 @@ import { GlobalContext } from "../../providers/GlobalContext/GlobalContext";
 import StyledListSuggested from "./StyledListSuggested";
 
 const ListProducts = () => {
-  const { ProductsList, SuggestedProducts } = useContext(GlobalContext);
+  const { ProductsList, SuggestedProducts} = useContext(GlobalContext);
 
   return (
     <>

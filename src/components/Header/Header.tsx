@@ -10,7 +10,6 @@ function Header() {
 
   const handleCar = () => {
     setIsCartOpen(true)
-    console.log('click')
   }
 
   return (

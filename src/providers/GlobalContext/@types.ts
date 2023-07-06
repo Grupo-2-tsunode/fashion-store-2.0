@@ -37,10 +37,10 @@ export interface IGlobalContext{
     setCurrentProduct: React.Dispatch<React.SetStateAction<IProduct | null>>;
     CurrentProduct: IProduct | null;
     SuggestedProducts: IProduct[];
-    CartList: IProduct[];
+    CartList: ICartProduct[];
     renderProduct: (idProduct: number) => Promise<void>;
     addProductToCart: (idProduct: number) => Promise<void>;
-    removeProductFromCart: (idProduct: number) => void;
+    removeProductFromCart: (product: ICartProduct) => void
     updateCartFromInputs: (inputValue: string, idProduct: number) => void;
     isCartOpen: boolean;
     setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;

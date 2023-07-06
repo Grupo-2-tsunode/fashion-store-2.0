@@ -20,7 +20,7 @@ function LoginPage() {
     }
 
     return ( <>
-      <HeaderAdmin> <img src={logo} alt="" />  </HeaderAdmin>
+      {/* <HeaderAdmin> <img src={logo} alt="" />  </HeaderAdmin> */}
         <StyledMain>
             <StyledContainer>
                <div className="boxOne">

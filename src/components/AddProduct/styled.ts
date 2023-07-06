@@ -38,11 +38,23 @@ export const AddProductStyled = styled.div`
                 right: 0;
             }
         }
+        .inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            width: 100%;
+
+            margin: 0 auto;
+        }
         .buttonAdd{
             display: flex;
             justify-content: end;
-            svg{
-                width: 1rem;
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .4rem;
             }
         }
     }

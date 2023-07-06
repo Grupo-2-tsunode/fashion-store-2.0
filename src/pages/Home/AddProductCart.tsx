@@ -4,7 +4,7 @@ import { FaCartPlus  } from "react-icons/fa"
 const AddProductCart = () => {
   return (
     <StyledAddProductCart>
-        <div>
+        <div >
         <FaCartPlus size={36} color="white" />
        </div>
       <span>Saiba Mais</span>

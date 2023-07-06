@@ -36,7 +36,7 @@ export interface IGlobalContext{
     setProductsList: React.Dispatch<React.SetStateAction<IProduct[]>>;
     CurrentProduct: IProduct | null;
     SuggestedProducts: IProduct[];
-    CartList: IProduct[];
+    CartList: ICartProduct[];
     renderProduct: (idProduct: number) => Promise<void>;
     addProductToCart: (idProduct: number) => Promise<void>;
     removeProductFromCart: (idProduct: number) => void;

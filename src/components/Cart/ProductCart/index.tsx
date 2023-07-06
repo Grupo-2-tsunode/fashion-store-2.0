@@ -26,7 +26,7 @@ export const ProductCart = ({product}:IProductProps) => {
             </div>
             <button onClick={(event)=>{
                 event.preventDefault()
-                removeProductFromCart(product.id)
+                removeProductFromCart(product)
             }}>-</button>
         </li>
     )

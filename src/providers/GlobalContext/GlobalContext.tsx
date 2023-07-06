@@ -28,7 +28,6 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         } catch (error) {
             toast.error(`${error}`)
         }
-        
     }
 
     const addProductToCart = async (idProduct:number)=>{

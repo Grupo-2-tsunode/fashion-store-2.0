@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const StyledInput = styled.input`
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
     height:50px;
     font-family: 'Oswald';
-    padding-left: 25px ;
     font-size: 21px;
     font-weight: 400;
     background-color: var(--color-grey);

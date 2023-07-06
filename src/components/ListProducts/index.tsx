@@ -38,7 +38,7 @@ function ListProduct() {
                                     </div>
                                     <div className="BoxCardTwo">
                                         <p> {element.name} </p>
-                                        <span> R$ {(element.price).toFixed(2)} </span>
+                                        {/* <span> R$ {(element.price).toFixed(2)} </span> */}
                                     </div>
                                     <div className="BoxCardTree">
                                         <button> <img src={iconEdit} alt="" /> </button>

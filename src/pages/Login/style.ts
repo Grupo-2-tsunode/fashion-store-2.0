@@ -69,7 +69,7 @@ export const StyledContainer = styled.div`
                     background-color: var(--color-white);
                     color: var(--color-black);
                     padding: 10px;
-                    font-family: Roboto;
+                    font-family: 'Roboto';
                     font-size: 12px;
                     font-weight: 500;
                     border: solid 1px var(--color-black);

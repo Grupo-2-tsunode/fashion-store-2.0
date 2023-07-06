@@ -13,7 +13,7 @@ const ListProducts = () => {
           <li key={product.id}>
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
-            <p>R${product.price.toFixed(2).replace(".", ",")}</p>
+            {/* <p>R${product.price.toFixed(2).replace(".", ",")}</p> */}
             <AddProductCart />
           </li>
         ))}

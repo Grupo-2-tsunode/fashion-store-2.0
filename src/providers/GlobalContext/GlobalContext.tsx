@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import { ICartProduct, ICurrentUser, IGlobalContext, IGlobalProviderProps, IProduct } from './@types';
-import  api  from '../../services/api';
+import { api }  from '../../services/api';
 import { toast } from 'react-toastify';
 import { TLoginData } from '../../pages/Login/LoginSchema';
 import { TRegisterData } from '../../pages/Register/RegisterSchema';
@@ -59,7 +59,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         const updateProduct = CartList.map((element)=>{
             if(element.id === idProduct){
                 let newQuantity = element.quantity +1
-                return {...element, "quantity": newQuantity}
+                return {...element, 'quantity': newQuantity}
             }
             return element
           })
@@ -79,7 +79,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
                     setCartValue(CartValue-sub)
                 }
                
-                return {...element, "quantity": value}
+                return {...element, 'quantity': value}
             }
             return element
           })
@@ -146,7 +146,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
             
             getAllProducts()
         } catch (error) {
-            toast.error("Não foi possível renderizar os produtos")
+            toast.error('Não foi possível renderizar os produtos')
         }
 
         let user  = localStorage.getItem('user@INFO')

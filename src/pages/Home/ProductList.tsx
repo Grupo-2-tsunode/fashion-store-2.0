@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import AddProductCart from "./AddProductCart";
-import { GlobalContext } from "../../providers/GlobalContext/GlobalContext";
-import StyledListSuggested from "./StyledListSuggested";
+import { useContext } from 'react';
+import {AddProductCart} from './AddProductCart';
+import { GlobalContext } from '../../providers/GlobalContext/GlobalContext';
+import {StyledListSuggested} from './StyledListSuggested';
 
-const ListProducts = () => {
+export const ListProducts = () => {
   const { ProductsList, SuggestedProducts} = useContext(GlobalContext);
 
   return (
@@ -35,5 +35,3 @@ const ListProducts = () => {
     </>
   );
 };
-
-export default ListProducts;

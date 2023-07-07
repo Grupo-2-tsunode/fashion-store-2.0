@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledAddProductCart = styled.div`
+export const StyledAddProductCart = styled.div`
 display: flex;
 align-items: center;
 gap: 25px;
@@ -20,7 +20,7 @@ button {
 a{
   text-decoration: none;
   font-size: 14px;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 500;
   text-transform: uppercase;
   color: var(--color-black);
@@ -29,4 +29,3 @@ a{
 
 
 `;
-export default StyledAddProductCart;

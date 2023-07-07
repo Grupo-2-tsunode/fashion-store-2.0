@@ -46,7 +46,7 @@ export const EditProduct = ({product} : IEditProductProps) => {
     return(
         <EditProductStyled>
             <form onSubmit={handleSubmit(submit)} className='modal__container'>
-                <div className="header__modal">
+                <div className='header__modal'>
                     <TitleStyled fontSize='bg' fontWidt='500'>EDITAR PRODUTO</TitleStyled>
                     <span onClick={handleClose}>
                         <AiOutlineClose />

@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledBannerSection = styled.section`
+export const StyledBannerSection = styled.section`
   display: flex;
   align-items: center;
   gap: 60px;
@@ -54,6 +54,3 @@ const StyledBannerSection = styled.section`
       }
     } 
   `
-
-  
-export default StyledBannerSection;

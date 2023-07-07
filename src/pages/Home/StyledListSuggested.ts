@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledListSuggested = styled.ul`
+export const StyledListSuggested = styled.ul`
 display: flex;
 flex-direction: column;
 overflow-x: scroll;
@@ -31,7 +31,7 @@ div{
 
         h3{
             color: var(--color-black);
-            font-family: "Roboto";
+            font-family: 'Roboto';
             font-weight: 700;
             font-size: 19px;
             margin-bottom: 22px;
@@ -50,4 +50,3 @@ div{
     }
   }
 `;
-export default StyledListSuggested;

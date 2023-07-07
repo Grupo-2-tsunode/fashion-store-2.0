@@ -1,5 +1,5 @@
 import { AiOutlineClose, AiOutlinePlusCircle } from 'react-icons/ai'
-import { ParagraphStyled, TitleStyled } from '../../styles/typography'
+import { TitleStyled } from '../../styles/typography'
 import { AddProductStyled } from './styled'
 import { ButtonStyled } from '../../styles/ButtonStyled'
 import { useContext } from 'react'
@@ -8,7 +8,7 @@ import { InputComponent } from '../Input'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { INewProduct } from '../../providers/AdmContext/@types'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { TAddProduct, addProductSchema } from './AddSchema'
+import { addProductSchema } from './AddSchema'
 
 export const AddProduct = () => {
 
@@ -40,13 +40,13 @@ export const AddProduct = () => {
     return(
         <AddProductStyled>
             <form onSubmit={handleSubmit(submit)} className='modal__container'>
-                <div className="header__modal">
+                <div className='header__modal'>
                     <TitleStyled fontSize='bg' fontWidt='500'>NOVO PRODUTO</TitleStyled>
                     <span onClick={handleClose}>
                         <AiOutlineClose />
                     </span>
                 </div>
-                    <div className="inputs">
+                    <div className='inputs'>
                         <InputComponent placeholder='NOME' type='text' {...register('name')}/>
                         {errors.name?.message} 
                         <InputComponent placeholder='PREÇO (R$)' type='number' {...register('price')}/>

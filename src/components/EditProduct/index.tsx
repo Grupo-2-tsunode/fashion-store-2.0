@@ -8,6 +8,8 @@ import { useContext } from 'react'
 import { AdmContext } from '../../providers/AdmContext/AdmContext'
 import { INewProduct } from '../../providers/AdmContext/@types'
 import { IProduct } from '../../providers/GlobalContext/@types'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { editProductSchema } from './editProductSchema'
 
 interface IEditProductProps {
     product: IProduct | null
@@ -20,7 +22,9 @@ export const EditProduct = ({product} : IEditProductProps) => {
 
     const {editProduct, setIsEditModalOpen} = useContext(AdmContext)
 
-    const {register,handleSubmit} = useForm<INewProduct>()
+    const {register,handleSubmit, formState:{errors}} = useForm<INewProduct>({
+        resolver:zodResolver(editProductSchema)
+    })
 
     const submit:SubmitHandler<INewProduct> = (formData) => {
         const priceNumber:number = Number(formData.price)
@@ -49,9 +53,13 @@ export const EditProduct = ({product} : IEditProductProps) => {
                     </span>
                 </div>
                 <InputComponent placeholder={product.name} type='text' {...register('name')}/>
+                {errors.name?.message}
                 <InputComponent placeholder={`R$${product.price}`} type='number' {...register('price')}/>
+                {errors.price?.message}
                 <InputComponent placeholder={product.image} type='text' {...register('image')}/>
+                {errors.image?.message}
                 <InputComponent placeholder={product.description} type='text' {...register('description')}/>
+                {errors.description?.message}
                 <div className='buttonAdd'>
                     <ButtonStyled buttonStyle='black'>
                        <AiFillEdit/> EDITAR PRODUTO

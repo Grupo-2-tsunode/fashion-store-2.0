@@ -2,7 +2,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import StyledHeader from './StyledHeader'
 import { useContext } from 'react';
 import { GlobalContext } from '../../providers/GlobalContext/GlobalContext';
-import { TitleStyled, TypographyAll } from '../../styles/typography';
+import { TitleStyled } from '../../styles/typography';
 
 function Header() {
 

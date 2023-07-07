@@ -1,7 +1,8 @@
-import { createContext, useState} from 'react';
+import { createContext, useContext, useState} from 'react';
 import { IAdmContext, IAdmProviderProps, INewProduct } from './@types';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
+import { GlobalContext } from '../GlobalContext/GlobalContext';
 
 
 export const AdmContext = createContext({} as IAdmContext)
@@ -10,6 +11,7 @@ export const AdmProvider = ({children}: IAdmProviderProps)=>{
     const token = localStorage.getItem('user@TOKEN')
     const [isEditModalOpen, setIsEditModalOpen] = useState(false)
     const [isNewProductModalOpen, setIsNewProductModalOpen] = useState(false)
+    const {ProductsList, setProductsList} = useContext(GlobalContext)
 
     
     const editProduct=async (formData:INewProduct, idProduct:number) => {
@@ -22,6 +24,14 @@ export const AdmProvider = ({children}: IAdmProviderProps)=>{
 
             toast.success('Atualização realizada com sucesso')
             
+             ProductsList.map((product) => {
+                if(product.id == idProduct){
+                    return data
+                }else{
+                    return product
+                }
+             })
+             
         } catch (error) {
             toast.error('Não foi possível atualizar o produto')
 
@@ -39,7 +49,9 @@ export const AdmProvider = ({children}: IAdmProviderProps)=>{
                 }
              } )
              toast.success('Produto adicionado com sucesso')
-            
+
+             setProductsList([...ProductsList, data])
+    
         } catch (error) {
             toast.error('Não foi possível adicionar novo produto')
         }finally{

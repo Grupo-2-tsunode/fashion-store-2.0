@@ -8,6 +8,7 @@ import { AdmContext } from '../../providers/AdmContext/AdmContext';
 import { AddProduct } from '../AddProduct';
 import { EditProduct } from '../EditProduct';
 import { IProduct } from '../../providers/GlobalContext/@types';
+
 function ListProduct() {
 
     const { ProductsList } = useContext(GlobalContext)
@@ -39,21 +40,22 @@ function ListProduct() {
                 <BoxTwo>
                     
                         {ProductsList.map(element => {
-                            return <li key={element.id}>
-                                <CardProduct>
-                                    <div className="BoxCardOne">
-                                        <img src={element.image} alt="" />
-                                    </div>
-                                    <div className="BoxCardTwo">
-                                        <p> {element.name} </p>
-                                        {/* <span> R$ {(element.price).toFixed(2)} </span> */}
-                                    </div>
-                                    <div className="BoxCardTree">
-                                        <button onClick={() => {handleEditProduct(), setProductEdit(element)}}> <img src={iconEdit} alt="" /> </button>
-                                        <button onClick={() => deleteProduct(element.id)}> <img src={deleteIcon} alt="" /></button>
-                                    </div>
-                                </CardProduct>
-                            </li>
+                            return (
+                                
+                                    <CardProduct key={element.id}>
+                                        <div className="BoxCardOne">
+                                            <img src={element.image} alt="" />
+                                        </div>
+                                        <div className="BoxCardTwo">
+                                            <p> {element.name} </p>
+                                            <span> R$ {(element.price).toFixed(2)} </span>
+                                        </div>
+                                        <div className="BoxCardTree">
+                                            <button onClick={() => {handleEditProduct(), setProductEdit(element)}}> <img src={iconEdit} alt="" /> </button>
+                                            <button onClick={() => deleteProduct(element.id)}> <img src={deleteIcon} alt="" /></button>
+                                        </div>
+                                    </CardProduct>
+                            )
                         })}
                     
                 </BoxTwo>

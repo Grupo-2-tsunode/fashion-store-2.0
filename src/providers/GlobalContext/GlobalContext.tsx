@@ -94,13 +94,12 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
     }
 
     const loginAdm =async (formData:TLoginData) => {
-        console.log(formData)
         
         try {
             const { data } = await api.post<ICurrentUser>('/login', formData)
           localStorage.setItem('user@TOKEN', data.accessToken)
           localStorage.setItem('user@ID', JSON.stringify(data.user.id))
-            console.log(data)
+          localStorage.setItem('user@INFO', JSON.stringify(data))
           setCurretUser(data)
           toast.success('Login realizado com sucesso')
           navigate('/adm/dashboard')
@@ -113,6 +112,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
     const logoutAdm = () =>{
         localStorage.removeItem('user@TOKEN')
         localStorage.removeItem('user@ID')
+        localStorage.removeItem('user@INFO')
         setCurretUser(null)
         toast.success('Logout realizado')
         navigate('/')
@@ -149,6 +149,12 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
             toast.error("Não foi possível renderizar os produtos")
         }
 
+        let user  = localStorage.getItem('user@INFO')
+        if(user){
+            setCurretUser(JSON.parse(user))
+            navigate('/adm/dashboard')
+        }
+        
     },[])
 
 

@@ -10,7 +10,7 @@ export const CartStyled = styled.div`
     .modal{
         position: absolute;
         top: 0;
-        right: 0;
+        right: 10px;
         
         display: flex;
         flex-direction: column;
@@ -38,31 +38,9 @@ export const CartStyled = styled.div`
 
             display: flex;
             flex-direction: column;
-            gap: .5rem;
+            gap: 1rem;
 
             overflow: auto;
-            li{
-                display: flex;
-                justify-content: space-between;
-                height: 70px;
-                width: 100%;
-                figure{
-                    width: 70px;
-                    height: 70px;
-
-                    img{
-                    }
-                }
-                .description{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-                button{
-                    background: none;
-                    border: none;
-                }
-            }
         }
         .valueAll{
             display: flex;

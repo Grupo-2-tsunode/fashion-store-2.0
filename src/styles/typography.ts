@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface IstyledTypographyProps {
-  fontSize: "bg" | "lg" | "sm" | "mn";
+  fontSize: "bg" | "lg" | "sm" | "mn" | 'normal';
   fontWidt: "400" | "500" | "700";
 }
 
@@ -23,6 +23,10 @@ export const TypographyAll = css<IstyledTypographyProps>`
       case "sm":
         return css`
           font-size: 1.375rem;
+        `;
+        case "normal":
+          return css`
+            font-size: 1rem;
         `;
       case "mn":
         return css`

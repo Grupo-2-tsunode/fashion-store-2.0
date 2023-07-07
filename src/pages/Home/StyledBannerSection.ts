@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 const StyledBannerSection = styled.section`
   display: flex;
-  padding: 0 5%;
-  gap: 60px;
   align-items: center;
+  gap: 60px;
 
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 1rem;
 
   div:first-child {
     width: 60%;

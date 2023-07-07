@@ -50,4 +50,5 @@ export interface IGlobalContext{
     registerNewUser: (formData: TRegisterData) => Promise<void>;
     CartValue: number;
     setCartValue: React.Dispatch<React.SetStateAction<number>>;
+    setSuggestedProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
 }

@@ -43,7 +43,6 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
                 if(productInCart.length > 0){
                     updateProductInCart(idProduct)
                 }
-                console.log(CartValue+data.price)
                 setCartValue(CartValue+data.price)
             } 
             
@@ -177,7 +176,8 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         logoutAdm, 
         registerNewUser,
         CartValue, 
-        setCartValue}}>
+        setCartValue,
+        setSuggestedProducts}}>
             {children}
         </GlobalContext.Provider>
     )

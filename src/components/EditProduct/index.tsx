@@ -35,7 +35,6 @@ export const EditProduct = ({product} : IEditProductProps) => {
             description: formData.description,
         }
         editProduct(newFormData, product.id)
-        console.log(newFormData)
         setIsEditModalOpen(false)
     }
 

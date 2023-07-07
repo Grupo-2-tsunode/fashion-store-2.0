@@ -10,7 +10,8 @@ export const HeaderAdmin = styled.header`
 
     button{
         position: relative;
-        left: 32%
+        left: 32%;
+        cursor: pointer;
     }
 
    

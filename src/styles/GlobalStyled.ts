@@ -8,4 +8,7 @@ export const GlobalStyled = createGlobalStyle`
         --color-white: #fff;
         --color-grey:#dee2e6;
     }
+    button{
+        cursor: pointer;
+    }
 `

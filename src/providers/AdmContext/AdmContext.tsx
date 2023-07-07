@@ -15,12 +15,17 @@ export const AdmProvider = ({children}: IAdmProviderProps)=>{
 
     
     const editProduct=async (formData:INewProduct, idProduct:number) => {
+
         try {
             const {data} = await api.put(`/products/${idProduct}`, formData,{
                 headers: {
                    Authorization: `Bearer ${token}`
                 }
              })
+             
+             const updatedList = ProductsList.filter((element) => element.id !== data.id)
+
+             setProductsList([...updatedList, data])
 
             toast.success('Atualização realizada com sucesso')
 
@@ -61,7 +66,7 @@ export const AdmProvider = ({children}: IAdmProviderProps)=>{
 
     const deleteProduct =async (idProduct:number) => {
         try {
-            const { data } = await api.delete(`/products/${idProduct}`, {
+             await api.delete(`/products/${idProduct}`, {
                 headers: {
                    Authorization: `Bearer ${token}`
                 }

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledDivProductDetails = styled.div`
 display:flex;  
@@ -24,7 +24,7 @@ div:nth-child(2) {
     
 
     h2 {
-        font-family: "Roboto";
+        font-family: 'Roboto';
         font-weight: 700;
         font-size: 24px;
         color: var(--color-black);
@@ -79,7 +79,7 @@ export const StyledButtonAdd = styled.button`
     span{
         font-size: 18px;
         font-weight: 500;
-        font-family: "Roboto";
+        font-family: 'Roboto';
         text-transform: uppercase;
     }
 

@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledDivTitleProduct = styled.div`
+export const StyledDivTitleProduct = styled.div`
   text-align: center;
   margin-top: 1.875rem;
     margin-bottom: 3.75rem;
@@ -14,4 +14,4 @@ const StyledDivTitleProduct = styled.div`
     
   }
 `;
-export default StyledDivTitleProduct;
+

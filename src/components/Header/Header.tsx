@@ -1,10 +1,10 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import StyledHeader from './StyledHeader'
+import{ StyledHeader} from './StyledHeader'
 import { useContext } from 'react';
 import { GlobalContext } from '../../providers/GlobalContext/GlobalContext';
 import { TitleStyled } from '../../styles/typography';
 
-function Header() {
+export const Header = ()=> {
 
   const {setIsCartOpen} = useContext(GlobalContext)
 
@@ -21,5 +21,3 @@ function Header() {
     </StyledHeader>
   )
 }
-
-export default Header;

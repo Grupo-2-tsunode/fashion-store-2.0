@@ -1,6 +1,6 @@
 import { createContext, useContext, useState} from 'react';
 import { IAdmContext, IAdmProviderProps, INewProduct } from './@types';
-import api from '../../services/api';
+import { api } from '../../services/api';
 import { toast } from 'react-toastify';
 import { GlobalContext } from '../GlobalContext/GlobalContext';
 

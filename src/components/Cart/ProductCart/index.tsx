@@ -16,7 +16,7 @@ export const ProductCart = ({product}:IProductProps) => {
     return(
         <ListCartStyled>
             <figure>
-                <img src={product.image} alt="" />
+                <img src={product.image} alt='Imagem produto' />
             </figure>
             <div className='description'>
                 <TitleStyled fontSize='normal' fontWidt='400'>{product.name}</TitleStyled>

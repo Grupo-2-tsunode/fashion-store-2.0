@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderAdmin = styled.header`
     display: flex;
@@ -6,6 +6,14 @@ export const HeaderAdmin = styled.header`
     width: 100%;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    button{
+        position: relative;
+        left: 32%
+    }
+
+   
 `
 
 export const FooterAdmin = styled.footer`

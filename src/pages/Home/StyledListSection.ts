@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledListSection = styled.section`
+export const StyledListSection = styled.section`
   display: flex;
   padding: 0 5%;
   flex-direction: column;
@@ -53,4 +53,3 @@ const StyledListSection = styled.section`
     }
   }
 `;
-export default StyledListSection;

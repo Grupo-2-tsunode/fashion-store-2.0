@@ -1,5 +1,5 @@
-import { TRegisterData } from "../../pages/Register/RegisterSchema";
-import { TLoginData } from "../../pages/Login/LoginSchema";
+import { TRegisterData } from '../../pages/Register/RegisterSchema';
+import { TLoginData } from '../../pages/Login/LoginSchema';
 
 export interface IGlobalProviderProps{
     children: React.ReactNode;

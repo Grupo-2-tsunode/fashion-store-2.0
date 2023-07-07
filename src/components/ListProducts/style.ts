@@ -71,7 +71,7 @@ export const CardProduct = styled.li`
     display: flex;
     appearance: none;
     height: 150px;
-    max-width: 650px;
+    max-width: 600px;
     width: 100%;
     .BoxCardOne{
         height: 100%;

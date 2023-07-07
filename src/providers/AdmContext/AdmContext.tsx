@@ -23,7 +23,7 @@ export const AdmProvider = ({children}: IAdmProviderProps)=>{
              })
 
             toast.success('Atualização realizada com sucesso')
-            
+
              ProductsList.map((product) => {
                 if(product.id == idProduct){
                     return data
@@ -66,7 +66,13 @@ export const AdmProvider = ({children}: IAdmProviderProps)=>{
                    Authorization: `Bearer ${token}`
                 }
              })
+             
              toast.success('Produto excluido com sucesso')
+             setProductsList(ProductsList.filter((product) => {
+                return product.id != idProduct
+             }))
+
+
         } catch (error) {
             toast.error('Não foi possível excluir produto')
         }

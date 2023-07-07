@@ -1,5 +1,5 @@
-import { TRegisterData } from "../../pages/Register/RegisterSchema";
-import { TLoginData } from "../../pages/Login/LoginSchema";
+import { TRegisterData } from '../../pages/Register/RegisterSchema';
+import { TLoginData } from '../../pages/Login/LoginSchema';
 
 export interface IGlobalProviderProps{
     children: React.ReactNode;
@@ -34,12 +34,13 @@ export interface ICurrentUser{
 export interface IGlobalContext{
     ProductsList: IProduct[];
     setProductsList: React.Dispatch<React.SetStateAction<IProduct[]>>;
+    setCurrentProduct: React.Dispatch<React.SetStateAction<IProduct | null>>;
     CurrentProduct: IProduct | null;
     SuggestedProducts: IProduct[];
     CartList: ICartProduct[];
     renderProduct: (idProduct: number) => Promise<void>;
     addProductToCart: (idProduct: number) => Promise<void>;
-    removeProductFromCart: (idProduct: number) => void;
+    removeProductFromCart: (product: ICartProduct) => void
     updateCartFromInputs: (inputValue: string, idProduct: number) => void;
     isCartOpen: boolean;
     setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -49,4 +50,5 @@ export interface IGlobalContext{
     registerNewUser: (formData: TRegisterData) => Promise<void>;
     CartValue: number;
     setCartValue: React.Dispatch<React.SetStateAction<number>>;
+    setSuggestedProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
 }

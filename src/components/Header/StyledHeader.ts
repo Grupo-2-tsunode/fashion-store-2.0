@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +11,10 @@ const StyledHeader = styled.header`
   margin: 0 auto;
   padding: 1.5rem;
 
+  h1{
+    cursor: pointer;
+  }
+
   button{
     display: flex;
     align-items: center;
@@ -20,4 +24,3 @@ const StyledHeader = styled.header`
     background: none;
   }
 `;
-export default StyledHeader;

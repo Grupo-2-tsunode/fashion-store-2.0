@@ -1,12 +1,10 @@
-
-import { EditProduct } from './components/EditProduct'
 import { ResetStyled } from './styles/GlobalReset'
 import { GlobalProvider } from './providers/GlobalContext/GlobalContext'
 import { GlobalStyled } from './styles/GlobalStyled'
 import { ToastContainer } from 'react-toastify'
-import RoutesMain from "./routes/routesMain";
+import RoutesMain from './routes/routesMain';
 
-const  App = ()=> {
+export const  App = ()=> {
 
   return (
     <>
@@ -15,7 +13,7 @@ const  App = ()=> {
     <ResetStyled/>
     <RoutesMain/>
       <ToastContainer 
-              position="top-right"
+              position='top-right'
               autoClose={5000}
               hideProgressBar={false}
               newestOnTop={false}
@@ -24,11 +22,9 @@ const  App = ()=> {
               pauseOnFocusLoss
               draggable
               pauseOnHover
-              theme="dark"
+              theme='dark'
             />
     </GlobalProvider>
     </>
   )
 }
-
-export default App;

@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledFooter = styled.footer`
+export const StyledFooter = styled.footer`
   margin: 0;
   height: 156px;
   background-color: var(--color-black);
@@ -23,4 +23,4 @@ p {
 
 
 `;
-export default StyledFooter;
+

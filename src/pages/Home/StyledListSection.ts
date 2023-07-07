@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledListSection = styled.section`
+export const StyledListSection = styled.section`
   display: flex;
   padding: 0 5%;
   flex-direction: column;
@@ -47,11 +47,9 @@ const StyledListSection = styled.section`
   @media(max-width: 768px){
     overflow-x: scroll;
     ul{
-      flex-direction: row;
       flex-wrap: nowrap;
       justify-content: center;
       width: max-content;
     }
   }
 `;
-export default StyledListSection;

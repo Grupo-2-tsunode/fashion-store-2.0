@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContainerList = styled.div`
     display: flex;
@@ -59,7 +59,8 @@ export const BoxOne = styled.div`
 `
 export const BoxTwo = styled.ul`
     display: flex;
-    height: 40vh;
+    height: fit-content;
+    padding-bottom: 100px;
     width: 100%;
     flex-wrap: wrap;
     gap: 20px;
@@ -70,7 +71,7 @@ export const CardProduct = styled.li`
     display: flex;
     appearance: none;
     height: 150px;
-    max-width: 650px;
+    max-width: 600px;
     width: 100%;
     .BoxCardOne{
         height: 100%;

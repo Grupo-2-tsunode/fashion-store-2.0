@@ -1,8 +1,8 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 interface IstyledTypographyProps {
-  fontSize: "bg" | "lg" | "sm" | "mn";
-  fontWidt: "400" | "500" | "700";
+  fontSize: 'bg' | 'lg' | 'sm' | 'mn' | 'normal';
+  fontWidt: '400' | '500' | '700';
 }
 
 export const TypographyAll = css<IstyledTypographyProps>`
@@ -12,19 +12,23 @@ export const TypographyAll = css<IstyledTypographyProps>`
 
   ${({ fontSize }) => {
     switch (fontSize) {
-      case "bg":
+      case 'bg':
         return css`
           font-size: 2.375rem;
         `;
-      case "lg":
+      case 'lg':
         return css`
           font-size: 1.75rem;
         `;
-      case "sm":
+      case 'sm':
         return css`
           font-size: 1.375rem;
         `;
-      case "mn":
+        case 'normal':
+          return css`
+            font-size: 1rem;
+        `;
+      case 'mn':
         return css`
           font-size: 0.75rem;
         `;
@@ -33,15 +37,15 @@ export const TypographyAll = css<IstyledTypographyProps>`
 
   ${({ fontWidt }) => {
     switch (fontWidt) {
-      case "400":
+      case '400':
         return css`
           font-weight: 400;
         `;
-      case "500":
+      case '500':
         return css`
           font-weight: 500;
         `;
-      case "700":
+      case '700':
         return css`
           font-weight: 700;
         `;

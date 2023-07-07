@@ -1,4 +1,4 @@
-import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/dist/ReactToastify.css';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyled = createGlobalStyle`
@@ -7,5 +7,8 @@ export const GlobalStyled = createGlobalStyle`
         --color-black: #000;
         --color-white: #fff;
         --color-grey:#dee2e6;
+    }
+    button{
+        cursor: pointer;
     }
 `

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import { ICartProduct, ICurrentUser, IGlobalContext, IGlobalProviderProps, IProduct } from './@types';
-import  api  from '../../services/api';
+import { api }  from '../../services/api';
 import { toast } from 'react-toastify';
 import { TLoginData } from '../../pages/Login/LoginSchema';
 import { TRegisterData } from '../../pages/Register/RegisterSchema';
@@ -11,7 +11,7 @@ export const GlobalContext = createContext({} as IGlobalContext)
 export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
 
     const [ProductsList, setProductsList] = useState<IProduct[]>([])
-    const [CurrentProduct, setCurretProduct] = useState<IProduct | null>(null) 
+    const [CurrentProduct, setCurrentProduct] = useState<IProduct | null>(null) 
     const [SuggestedProducts, setSuggestedProducts] = useState<IProduct[]>([])
     const [CartList, setCartList]= useState<ICartProduct[]>([]) 
     const [CartValue, setCartValue] = useState(0) 
@@ -23,7 +23,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
     const renderProduct = async (idProduct:number)=>{
         try {
             const {data} = await api.get<IProduct>(`/products/${idProduct}`)
-            setCurretProduct(data)
+            setCurrentProduct(data)
             setSuggestedProducts(ProductsList.filter(element => element.id !== idProduct))
         } catch (error) {
             toast.error(`${error}`)
@@ -39,12 +39,10 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
                 if(productInCart.length==0){
                     const newProduct = {...data, quantity: 1}
                     setCartList([...CartList, newProduct])
-                    console.log(newProduct)
                 }
                 if(productInCart.length > 0){
                     updateProductInCart(idProduct)
                 }
-
                 setCartValue(CartValue+data.price)
             } 
             
@@ -60,7 +58,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         const updateProduct = CartList.map((element)=>{
             if(element.id === idProduct){
                 let newQuantity = element.quantity +1
-                return {...element, "quantity": newQuantity}
+                return {...element, 'quantity': newQuantity}
             }
             return element
           })
@@ -80,25 +78,27 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
                     setCartValue(CartValue-sub)
                 }
                
-                return {...element, "quantity": value}
+                return {...element, 'quantity': value}
             }
             return element
           })
         setCartList(newCart)
     }
 
-    const removeProductFromCart = (idProduct:number)=>{
-        setCartList(CartList.filter(element=> element.id !== idProduct))
+    const removeProductFromCart = (product : ICartProduct)=>{
+        setCartList(CartList.filter(element=> element.id !== product.id))
+        let sub = product.quantity * product.price
+        setCartValue(CartValue-sub)
+
     }
 
     const loginAdm =async (formData:TLoginData) => {
-        console.log(formData)
         
         try {
             const { data } = await api.post<ICurrentUser>('/login', formData)
           localStorage.setItem('user@TOKEN', data.accessToken)
           localStorage.setItem('user@ID', JSON.stringify(data.user.id))
-            console.log(data)
+          localStorage.setItem('user@INFO', JSON.stringify(data))
           setCurretUser(data)
           toast.success('Login realizado com sucesso')
           navigate('/adm/dashboard')
@@ -111,6 +111,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
     const logoutAdm = () =>{
         localStorage.removeItem('user@TOKEN')
         localStorage.removeItem('user@ID')
+        localStorage.removeItem('user@INFO')
         setCurretUser(null)
         toast.success('Logout realizado')
         navigate('/')
@@ -144,9 +145,15 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
             
             getAllProducts()
         } catch (error) {
-            toast.error("Não foi possível renderizar os produtos")
+            toast.error('Não foi possível renderizar os produtos')
         }
 
+        let user  = localStorage.getItem('user@INFO')
+        if(user){
+            setCurretUser(JSON.parse(user))
+            navigate('/adm/dashboard')
+        }
+        
     },[])
 
 
@@ -157,6 +164,7 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         SuggestedProducts, 
         CartList, 
         setProductsList,
+        setCurrentProduct,
         renderProduct, 
         addProductToCart, 
         removeProductFromCart, 
@@ -168,7 +176,8 @@ export const GlobalProvider = ({children}: IGlobalProviderProps )=>{
         logoutAdm, 
         registerNewUser,
         CartValue, 
-        setCartValue}}>
+        setCartValue,
+        setSuggestedProducts}}>
             {children}
         </GlobalContext.Provider>
     )

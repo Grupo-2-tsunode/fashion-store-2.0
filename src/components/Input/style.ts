@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledInput = styled.input`
     width: 100%;
     max-width: 500px;
+    min-width: 400px;
     height:50px;
     font-family: 'Oswald';
     font-size: 21px;
@@ -12,17 +13,9 @@ export const StyledInput = styled.input`
     border: none;
     opacity: 50%;
     appearance: none;
+
+    ::placeholder{
+        padding-left: 20px;
+        font-size: 21px;
+    }
 `
-
-
-
-
-// export const GlobalStyled = createGlobalStyle`
-//     :root{
-//         --font-primary: 'Oswald', sans-serif;
-
-//         --color-black: #000;
-//         --color-white: #fff;
-//         --color-grey:#dee2e6;
-//     }
-// `

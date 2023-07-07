@@ -1,11 +1,11 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const StyledMain = styled.main`
    
-    height: 75vh;
-    padding-right: 10vw;
-    padding-left: 10vw;
-
+    height: 60vh;
+    display: flex;
+    width: 100%;
+    margin-top: 3vh;
 `
 export const HeaderAdmin = styled.header`
     display: flex;
@@ -15,30 +15,33 @@ export const HeaderAdmin = styled.header`
     align-items: center;
 `
 export const StyledContainer = styled.div`
-    width: 80vw;
+    width: 100%;
     display: flex;
-    height: 100%;
+    height: 100%;   
+    justify-content: flex-start;
+    gap: 0;
     .boxOne{
-        width: 60%;
+        display: flex;
+        width: 55%;
+        justify-content: flex-end;
         height: 100%;
-    
         img{
-            width: 100%;
-            height: 100%;
+            height: 120%;
         }
     }
     .boxTwo{
-        padding-top: 12%;
+
         display: flex;
-        height: 100%;
-        padding-right:  1%; 
-        padding-left: 1%;
-        width: 40%;
-        
+        height: 100%;   
+        padding-top: 18vh;
+        padding-left: 50px;
+         width: 40%;
+        justify-content: flex-start;
         form{
                 display: flex ;
                 flex-direction: column;
                 gap: 15px;
+                
 
             h3{
                 font-family: 'Oswald';
@@ -69,7 +72,7 @@ export const StyledContainer = styled.div`
                     background-color: var(--color-white);
                     color: var(--color-black);
                     padding: 10px;
-                    font-family: Roboto;
+                    font-family: 'Roboto';
                     font-size: 12px;
                     font-weight: 500;
                     border: solid 1px var(--color-black);
@@ -82,13 +85,13 @@ export const FooterAdmin = styled.footer`
     display: flex;
     position: fixed;
     bottom: 0;
-    height: 10vh;
+    height: 15vh;
     width: 100%;
     justify-content: center;
     align-items: center;
     background-color: var(--color-black);
     color: var(--color-white);
     font-family: 'Roboto';
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 500;  
 `

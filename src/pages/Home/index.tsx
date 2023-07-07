@@ -1,16 +1,16 @@
-import { ButtonStyled } from "../../styles/ButtonStyled";
-import StyledBannerSection from "./StyledBannerSection";
-import ListProducts from "./ProductList";
-import StyledListSection from "./StyledListSection";
-import StyledMain from "./StyledMain";
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
+import { ButtonStyled } from '../../styles/ButtonStyled';
+import {StyledBannerSection} from './StyledBannerSection';
+import {ListProducts} from './ProductList';
+import {StyledListSection} from './StyledListSection';
+import {StyledMain} from './StyledMain';
+import {Footer} from '../../components/Footer/Footer';
+import {Header} from '../../components/Header/Header';
 import { useContext } from 'react';
 import { GlobalContext } from '../../providers/GlobalContext/GlobalContext';
 import { Cart } from '../../components/Cart';
+import banner from '../../../public/Rectangle2.svg'
 
-
-function HomePage() {
+export const HomePage = () => {
 
   const {isCartOpen} = useContext(GlobalContext)
 
@@ -21,11 +21,11 @@ function HomePage() {
     <StyledMain>
       <StyledBannerSection>
         <div>
-          <img src="public/Rectangle2.svg" alt="img" />
+          <img src={banner} alt='img' />
         </div>
         <div>
           <h1>KENZIE FASHION STORE</h1>
-          <ButtonStyled buttonStyle="black">CONFIRA AS OFERTAS</ButtonStyled>
+          <ButtonStyled buttonStyle='black'>CONFIRA AS OFERTAS</ButtonStyled>
         </div>
       </StyledBannerSection>
       <StyledListSection>
@@ -37,4 +37,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+

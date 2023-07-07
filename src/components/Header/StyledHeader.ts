@@ -11,6 +11,10 @@ export const StyledHeader = styled.header`
   margin: 0 auto;
   padding: 1.5rem;
 
+  h1{
+    cursor: pointer;
+  }
+
   button{
     display: flex;
     align-items: center;

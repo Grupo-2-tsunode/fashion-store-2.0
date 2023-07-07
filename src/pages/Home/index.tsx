@@ -8,7 +8,7 @@ import {Header} from '../../components/Header/Header';
 import { useContext } from 'react';
 import { GlobalContext } from '../../providers/GlobalContext/GlobalContext';
 import { Cart } from '../../components/Cart';
-
+import banner from '../../../public/Rectangle2.svg'
 
 export const HomePage = () => {
 
@@ -21,7 +21,7 @@ export const HomePage = () => {
     <StyledMain>
       <StyledBannerSection>
         <div>
-          <img src='public/Rectangle2.svg' alt='img' />
+          <img src={banner} alt='img' />
         </div>
         <div>
           <h1>KENZIE FASHION STORE</h1>

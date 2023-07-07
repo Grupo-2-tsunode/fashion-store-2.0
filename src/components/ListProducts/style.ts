@@ -59,7 +59,8 @@ export const BoxOne = styled.div`
 `
 export const BoxTwo = styled.ul`
     display: flex;
-    height: 40vh;
+    height: fit-content;
+    padding-bottom: 100px;
     width: 100%;
     flex-wrap: wrap;
     gap: 20px;
